@@ -43,8 +43,7 @@ create or replace view v_occupation_sleep_summary as
 ```
 2. BMI vs. Sleep Disorders View
 Aggregates the occurrence of sleep disorders across different BMI categories.
-```
-SQL
+```sql
 create or replace view v_health_sleep_disorders_summary as
 	select 
 		sq.bmi_category,

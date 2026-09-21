@@ -67,7 +67,7 @@ Sleep Disorder Breakdown by BMI Category (100% Stacked Bar Chart): Normalized to
 ![Sleep Health Analytics Dashboard](assets/powerbi_asset.png)
 
 ├── assets/
-│   ├── dashboard_screenshot.png
+│   ├── powerbi_asset.png
 
 📁 Repository Structure
 ├── data/

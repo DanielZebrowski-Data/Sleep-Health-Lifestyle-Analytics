@@ -63,7 +63,7 @@ The interactive dashboard includes two primary visuals designed for executive re
 Average Sleep Duration by Occupation (Clustered Bar Chart): Sorted descending to quickly highlight best and worst performing professions.
 
 Sleep Disorder Breakdown by BMI Category (100% Stacked Bar Chart): Normalized to show proportions and eliminate sample size bias across weight categories.
-
+```
 ![Sleep Health Analytics Dashboard](Sleep_health_and_lifestyle_dataset/assets/powerbi_asset.png)
 
 ├── assets/

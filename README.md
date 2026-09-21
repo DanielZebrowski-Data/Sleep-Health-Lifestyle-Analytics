@@ -42,10 +42,10 @@ SELECT
 FROM sleep_health
 GROUP BY occupation
 ORDER BY average_sleep_duration DESC;
-
+```
 2. BMI vs. Sleep Disorders View
 Aggregates the occurrence of sleep disorders across different BMI categories.
-
+```
 SQL
 CREATE VIEW v_health_sleep_disorders_summary AS
 SELECT 
@@ -56,14 +56,14 @@ SELECT
     COUNT(*) AS total_category_count
 FROM sleep_health
 GROUP BY bmi_category;
-
+```
 📈 Power BI Dashboard Highlights
 The interactive dashboard includes two primary visuals designed for executive reporting:
 
 Average Sleep Duration by Occupation (Clustered Bar Chart): Sorted descending to quickly highlight best and worst performing professions.
 
 Sleep Disorder Breakdown by BMI Category (100% Stacked Bar Chart): Normalized to show proportions and eliminate sample size bias across weight categories.
-```
+
 ![Sleep Health Analytics Dashboard](Sleep_health_and_lifestyle_dataset/assets/powerbi_asset.png)
 ```
 ├── assets/
@@ -77,7 +77,7 @@ Sleep Disorder Breakdown by BMI Category (100% Stacked Bar Chart): Normalized to
 ├── powerbi/
 │   └── Sleep_Health_Analytics.pbix
 └── README.md
-
+```
 👨‍💻 Author
 Daniel Żebrowski
 

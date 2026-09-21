@@ -64,7 +64,8 @@ Average Sleep Duration by Occupation (Clustered Bar Chart): Sorted descending to
 
 Sleep Disorder Breakdown by BMI Category (100% Stacked Bar Chart): Normalized to show proportions and eliminate sample size bias across weight categories.
 
-![Sleep Health Analytics Dashboard](assets/powerbi_asset.png)
+<img width="1475" height="414" alt="powerbi_asset" src="https://github.com/user-attachments/assets/2f4b2245-d64e-4290-9996-c4ec52e8096a" />
+
 
 ├── assets/
 │   ├── dashboard_screenshot.png

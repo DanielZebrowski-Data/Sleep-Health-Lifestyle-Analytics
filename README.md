@@ -31,31 +31,33 @@ Calculates average sleep duration, physical activity, and stress metrics grouped
 
 
 ```sql
-CREATE VIEW v_occupation_sleep_summary AS
-SELECT 
-    occupation,
-    ROUND(AVG(sleep_duration)::numeric, 2) AS average_sleep_duration,
-    ROUND(AVG(quality_of_sleep)::numeric, 2) AS average_sleep_quality,
-    ROUND(AVG(physical_activity_level)::numeric, 2) AS average_activity_level,
-    ROUND(AVG(stress_level)::numeric, 2) AS average_stress_level,
-    COUNT(*) AS total_respondents
-FROM sleep_health
-GROUP BY occupation
-ORDER BY average_sleep_duration DESC;
+create or replace view v_occupation_sleep_summary as
+	select
+		sq.occupation,
+		count(sq.person_id) as total_employees,
+		round(avg(sq.sleep_duration::numeric),2) as average_sleep_duration,
+		round(avg(sq.quality_of_sleep::numeric),2) as average_quality_of_sleep,
+		round(avg(sq.stress_level::numeric),2) as average_stress_level
+	from sleep_quality sq 
+	group by occupation;
 ```
 2. BMI vs. Sleep Disorders View
 Aggregates the occurrence of sleep disorders across different BMI categories.
 ```
 SQL
-CREATE VIEW v_health_sleep_disorders_summary AS
-SELECT 
-    bmi_category,
-    COUNT(CASE WHEN sleep_disorder = 'Insomnia' THEN 1 END) AS insomnia_count,
-    COUNT(CASE WHEN sleep_disorder = 'Sleep Apnea' THEN 1 END) AS sleep_apnea_count,
-    COUNT(CASE WHEN sleep_disorder IS NULL OR sleep_disorder = 'None' THEN 1 END) AS no_disorder_count,
-    COUNT(*) AS total_category_count
-FROM sleep_health
-GROUP BY bmi_category;
+create or replace view v_health_sleep_disorders_summary as
+	select 
+		sq.bmi_category,
+		sq.gender,
+		count(*) as total_population,
+		count(*) filter (where sq.sleep_disorder = 'Insomnia') as Insomnia_disorder,
+		count(*) filter (where sq.sleep_disorder = 'Sleep Apnea') as Sleep_apnea_disorder,
+		count(*) filter (where sq.sleep_disorder is Null) as No_disorder,
+		round(avg(sq.systolic_bp::numeric),1) as average_systolic_value,
+		round(avg(sq.diastolic_bp::numeric),1) as average_diastolic_value
+	from sleep_quality sq
+	group by bmi_category, gender
+	order by bmi_category;
 ```
 📈 Power BI Dashboard Highlights
 The interactive dashboard includes two primary visuals designed for executive reporting:

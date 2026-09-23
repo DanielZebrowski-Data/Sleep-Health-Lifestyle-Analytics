@@ -83,6 +83,6 @@ Daniel Żebrowski
 
 Aspiring Data Analyst | SQL, Power BI & Python
 
-LinkedIn: Daniel Żebrowski
+LinkedIn: [Daniel Żebrowski](https://www.linkedin.com/in/daniel-%C5%BCebrowski-7a0937211/)
 
 GitHub: @DanielZebrowski-Data
